@@ -7,10 +7,14 @@ using System.Linq;
 
 namespace GrokkingAlgoTests.ChapterOneTests
 {
+    /// <summary>
+    /// The binary search tests. for found , not found results and maximum trails as Big O Notation representation -worst case -
+    /// </summary>
     public class BinarySearchTests
     {
-
-       
+        /// <summary>
+        /// Sorted  array existing element returns the element index.
+        /// </summary>
         [Test]
         public void SortedArrayExistingElementReturnsTheElementIndex () {
             var result = BinarySearch<int>.BSearch(new int[] {1,2,3,4,5,6,7,8,9,10 } , 10 , out int actualTrials);
@@ -19,6 +23,9 @@ namespace GrokkingAlgoTests.ChapterOneTests
             Assert.AreEqual(9,result);
             Assert.IsTrue(_MaxTraialsShouldBe >= actualTrials);
         }
+        /// <summary>
+        /// Sorted  array existing element returns the element index.
+        /// </summary>
         [Test]
         public void SortedArrayExistingElementReturnsTheElementIndex2 ()
         {
@@ -31,8 +38,11 @@ namespace GrokkingAlgoTests.ChapterOneTests
             Assert.AreEqual(9999999,result);
             Assert.IsTrue(_MaxTraialsShouldBe >= actualTrials);
         }
+        /// <summary>
+        /// Trials the count in worst case is log array count plus one if found or less.
+        /// </summary>
         [Test]
-        public void TrialsCountInWortstCaseIsLogArrayCountPlusOneIfFoundOrLess () {
+        public void TrialsCountInWorstCaseIsLogArrayCountPlusOneIfFoundOrLess () {
             const int elementsCountInArray = 10000000;
             var arr = Enumerable.Range(10, elementsCountInArray).ToArray(); ;
 
@@ -43,8 +53,11 @@ namespace GrokkingAlgoTests.ChapterOneTests
             Assert.IsTrue(_MaxTraialsShouldBe>= actualTrials);
         }
 
+        /// <summary>
+        /// Trials the count in worst case is log array count plus one if not found or less and returns minus one.
+        /// </summary>
         [Test]
-        public void TrialsCountInWortstCaseIsLogArrayCountPlusOneIfNotFoundOrLessAndReturnsMinusOne ()
+        public void TrialsCountInWorstCaseIsLogArrayCountPlusOneIfNotFoundOrLessAndReturnsMinusOne ()
         {
             const int elementsCountInArray = 10000000;
             var arr = Enumerable.Range(10, elementsCountInArray).ToArray(); ;
