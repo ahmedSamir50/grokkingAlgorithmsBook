@@ -7,25 +7,21 @@ namespace GrokkingAlgoExapmles.Chapter_1
     /// <summary>
     /// The binary search.Big O(log n)
     /// </summary>
-    public class BinarySearch
+    public class BinarySearch<T> : ComparingTBase<T> where T : IComparable<T>
     {
-        /// <summary>
-        /// search in an sorted array using the binary search algorithm -- loop 
-        /// </summary>
-        /// <param name="searchIn">array to search in </param>
-        /// <param name="searchFor">element to search for </param>
-        /// <returns> (-1) if not found or the index of element if found </returns>
-        public static int BSearch (int[] searchIn , int searchFor , out int trialsCount) {
+      
+        public static int BSearch (T[] searchIn, T searchFor, out int trialsCount)
+        {
             trialsCount = 0;
             int lowPos = 0;
-            int highPos = searchIn.Length-1;
-            while (lowPos<=highPos)
+            int highPos = searchIn.Length - 1;
+            while (lowPos <= highPos)
             {
                 trialsCount++;
                 int midPos = (lowPos + highPos) / 2;
-                if (searchIn[midPos] == searchFor)
+                if (searchIn[midPos].Equals( searchFor))
                     return midPos;
-                else if (searchIn[midPos] > searchFor)
+                else if (IsBiggerThan(searchIn[midPos], searchFor))
                     highPos = midPos - 1;
                 else
                     lowPos = midPos + 1;

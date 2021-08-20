@@ -7,7 +7,7 @@ namespace GrokkingAlgoExapmles.Chapter_1
     /// <summary>
     /// The simple search.  Big O(n)
     /// </summary>
-    public class SimpleSearch
+    public class SimpleSearch<T> : ComparingTBase<T> where T : IComparable<T>
     {
         /// <summary>
         /// Linear the search. With O(n)
@@ -17,11 +17,11 @@ namespace GrokkingAlgoExapmles.Chapter_1
         /// <param name="searchFor">The search for. number/ element</param>
         /// <param name="trialsCount">The trials count. till finish</param>
         /// <returns>An int. (-1) if not found or the element index if found </returns>
-        public static int LineSearch (int[] searchIn, int searchFor, out int trialsCount) {
+        public static int LineSearch (T[] searchIn, T searchFor, out int trialsCount) {
             trialsCount = 1;
             for (int i = 0; i < searchIn.Length; i++,trialsCount++)
             {
-                if (searchIn[i] == searchFor)
+                if (IsEqualTo(searchIn[i], searchFor))
                     return i;
             }
             return -1;
