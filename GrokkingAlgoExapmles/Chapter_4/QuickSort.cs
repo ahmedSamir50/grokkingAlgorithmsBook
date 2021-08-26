@@ -24,6 +24,7 @@ namespace GrokkingAlgoExapmles
                 else
                     less.Add(array[i]);
             }
+            Console.WriteLine("*Traial*");
             return ASCORDESCDecidion(DESC, pivotElem, less, big);
 
         }
