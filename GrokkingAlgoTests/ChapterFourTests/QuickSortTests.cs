@@ -1,5 +1,4 @@
 ﻿using GrokkingAlgoExapmles;
-using GrokkingAlgoExapmles.Chapter_2;
 using NUnit.Framework;
 using System;
 using System.Linq;
@@ -20,6 +19,15 @@ namespace GrokkingAlgoTests.ChapterTwoTest
             charArray = QuickSort<char>.QSort(charArray);
             Printarray(charArray);
             Assert.IsTrue(charArray.SequenceEqual(new char[] { 'A', 'B', 'C', 'M', 'N', 'Z', 'a' }));
+        }
+
+        [Test]
+        public void RandArraySortedASC2()
+        {
+            int[] array = Enumerable.Range(1, 1000).ToArray();
+            int[] arrayRev = QuickSort<int>.QSort(array, true);
+            Printarray(array);
+            Assert.IsTrue(arrayRev.SequenceEqual(array.Reverse()));
         }
 
         [Test]

@@ -24,18 +24,16 @@ namespace GrokkingAlgoExapmles
                 else
                     less.Add(array[i]);
             }
-            Console.WriteLine("*Traial*");
+            //Console.WriteLine("*Traial*");
             return ASCORDESCDecidion(DESC, pivotElem, less, big);
 
         }
         static T[] ASCORDESCDecidion(bool DESC, T pivotElem, List<T> less, List<T> big)
         {
             return !DESC ?
-                            QSort(less.ToArray()).Concat(new T[] { pivotElem }).Concat(QSort(big.ToArray()))
-                            .ToArray()
-                            :
-                             QSort(big.ToArray(),true).Concat(new T[] { pivotElem }).Concat(QSort(less.ToArray(),true))
-                            .ToArray();
+                    QSort(less.ToArray()).Concat(new T[] { pivotElem }).Concat(QSort(big.ToArray())).ToArray()
+                     :
+                    QSort(big.ToArray(),true).Concat(new T[] { pivotElem }).Concat(QSort(less.ToArray(),true)).ToArray();
         }
 
     }
