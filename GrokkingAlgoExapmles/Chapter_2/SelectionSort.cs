@@ -11,6 +11,9 @@ namespace GrokkingAlgoExapmles.Chapter_2
     {
         /// <summary>
         /// Sorts an array Ascending or Descending -*In Place*-
+        /// loop throw array each time find the smallest / the biggest elemet
+        /// set it at the start and then go to the next smallest / biggest element 
+        /// until array is sorted 
         /// </summary>
         /// <param name="toSortArray">The to sort array.</param>
         /// <param name="Asc">If true, Ascending.</param>

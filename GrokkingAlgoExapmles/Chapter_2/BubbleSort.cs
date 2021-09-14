@@ -4,10 +4,16 @@ using System.Text;
 
 namespace GrokkingAlgoExapmles.Chapter_2
 {
+    /// <summary>
+    /// The Bubble sort.  O(n) = O(n^2) too
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BubbleSort<T> : ComparingTBase<T> where T : IComparable<T>
     {
         /// <summary>
         /// Sorts an array Ascending or Descending -*In Place*-
+        /// loop and compare each element with it's previous element then swap 
+        /// keep comparing and swaping untill array is sorted 
         /// </summary>
         /// <param name="toSortArray">The to sort array.</param>
         /// <param name="Asc">If true, Ascending.</param>
