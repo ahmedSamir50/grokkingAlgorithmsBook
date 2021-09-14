@@ -5,7 +5,7 @@ using System.Text;
 namespace GrokkingAlgoExapmles.Chapter_2
 {
     /// <summary>
-    /// The selection sort. O(n) of O(n) = O(n^2)
+    /// The selection sort.  O(n) = O(n^2)
     /// </summary>
     public class SelectionSort<T> : ComparingTBase<T> where T : IComparable<T>
     {
