@@ -1,5 +1,6 @@
 ﻿using GrokkingAlgoExapmles.Chapter_2;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GrokkingAlgoExapmles
@@ -9,17 +10,23 @@ namespace GrokkingAlgoExapmles
         static void Main (string[] args)
         {
             Console.WriteLine("Hello World!");
-            int[] array = { 5, 6, 9, 10, 3, 7, 2, 1, 8, 0, 4, 100, -100 };
-            array = BubbleSort<int>.SortArray(array, false);
-            //array = Enumerable.Range(1, 4150).ToArray();
-            Printarray(array);
-            //--------------------------
-            array = new int[] { 5, 6, 9, 10, 3, 7, 2, 1, 8, 0, 4, 100, -100 };
-            array = QuickSort<int>.QSort(array, true);
-             array = Enumerable.Range(1, 4150).ToArray();
-             int[] arrayRev = QuickSort<int>.QSort(array, true);
-            Printarray(arrayRev);
+            DijkstraAlgo dijkstraAlgo = new DijkstraAlgo();
 
+            TreeNode fin = new TreeNode("fin");
+            TreeNode _APoint = new TreeNode("A");
+            TreeNode _BPoint = new TreeNode("B");
+            _APoint.Neigbores = new Dictionary<TreeNode, double>(new List<KeyValuePair<TreeNode, double>> {
+                new KeyValuePair<TreeNode, double>( fin,1) ,
+            });
+            _APoint.Neigbores = new Dictionary<TreeNode, double>(new List<KeyValuePair<TreeNode, double>> {
+                new KeyValuePair<TreeNode, double>( _APoint,3) ,
+                new KeyValuePair<TreeNode, double>( fin,3) ,
+            });
+            TreeNode start = new TreeNode("start");
+            start.Neigbores = new Dictionary<TreeNode, double>(new List<KeyValuePair<TreeNode, double>> {
+                new KeyValuePair<TreeNode, double>( _APoint,6) ,
+                new KeyValuePair<TreeNode, double>( _BPoint,2) ,
+            });
         }
         private static void Printarray <T>(T[] arr , char separator = ',')
         {
